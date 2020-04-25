@@ -1,21 +1,12 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/database.js');
 const config = require('../config/config.js');
-/*
-sequelize = new Sequelize (
-    'MDK', 'root', 'root',
-    /*config.database, 
-    config.user,
-    config.password,
-    {
-        host: config.host,
-        dialect: 'mysql'
-    });*/
-
-    
 
 
-    const Dados_mdk = sequelize.define("dados_mdk", {
+
+
+
+const Dados_mdk = sequelize.define("dados_mdk", {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -26,14 +17,14 @@ sequelize = new Sequelize (
         allowNull: false,
         type: Sequelize.STRING(100),
         validade: {
-            len: [3,100]
+            len: [3, 100]
         }
     },
     fase: {
         allowNull: false,
         type: Sequelize.STRING(100),
         validade: {
-            len: [3,100]
+            len: [3, 100]
         }
     }
 });
