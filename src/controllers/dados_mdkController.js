@@ -7,7 +7,7 @@ exports.Insert = (req, res, next) => {
 
 
 
-    Dados_mdk.create({
+    Dados_mdks.create({
         titulo: titulo,
         fase: fase
     })
@@ -23,6 +23,7 @@ exports.Insert = (req, res, next) => {
 
 
 exports.searchAll = (req, res, next) => {
+    console.log("teste")
     Dados_mdk.findAll()
         .then(dados_mdk => {
             if (dados_mdk) {
@@ -80,18 +81,18 @@ exports.Delete = (req, res, next) => {
     const id = req.params.id;
 
     Dados_mdk.findByPk(id)
-    .then(dados_mdk => {
-        if(dados_mdk){
-            dados_mdk.destroy({
-                where: {id: id}
-            })
-            .then(() => {
-                res.status(status.OK).send();
+        .then(dados_mdk => {
+            if (dados_mdk) {
+                dados_mdk.destroy({
+                    where: { id: id }
+                })
+                    .then(() => {
+                        res.status(status.OK).send();
 
-            })
-            .catch(error => next(error));
-        } else {
-            res.status(status.NOT_FOUND).send();
-        }
-    })
+                    })
+                    .catch(error => next(error));
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
 }

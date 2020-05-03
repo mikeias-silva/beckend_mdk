@@ -27,6 +27,8 @@ const Dados_mdk = sequelize.define("dados_mdk", {
             len: [3, 100]
         }
     }
-});
+}
+
+);
 
 module.exports = Dados_mdk;
