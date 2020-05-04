@@ -4,6 +4,7 @@ const status = require('http-status');
 exports.Insert = (req, res, next) => {
     const titulo = req.body.titulo;
     const fase = req.body.fase;
+    const teste= teste;
 
 
 
@@ -20,6 +21,8 @@ exports.Insert = (req, res, next) => {
         })
         .catch(error => next(error));
 }
+
+
 
 
 exports.searchAll = (req, res, next) => {
